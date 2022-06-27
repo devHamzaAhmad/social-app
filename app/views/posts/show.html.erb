@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<img src="<%=(url_for(@post.image)) %> ">
+<p>
+  <strong>Likes:</strong>
+  <%= @post.likes %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @post.user.name %>
+</p>
+
+<%= link_to 'Like', user_post_path(@user, @post, :likes => @post.inc_likes), method: :put%> |
+<%= link_to 'Edit', edit_user_post_path(@user, @post) %> |
+<%= link_to 'Back', user_posts_path(@user) %>
+
